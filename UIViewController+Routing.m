@@ -44,12 +44,12 @@
     [self setSeguesBlockDictionary:dict];
 }
 
-- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender prepareBlock:(YDPreparationBlock)block {
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender preparationBlock:(YDPreparationBlock)block {
     [self setPreparationBlock:block forSegueWithIdentifier:identifier];
     [self performSegueWithIdentifier:identifier sender:sender];
 }
 
-- (YDPreparationBlock)prepareBlockForSegue:(UIStoryboardSegue *)segue
+- (YDPreparationBlock)preparationBlockForSegue:(UIStoryboardSegue *)segue
 {
     NSDictionary *dict = [self seguesBlockDictionary];
     return dict[segue.identifier];
