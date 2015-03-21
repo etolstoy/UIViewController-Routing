@@ -13,5 +13,6 @@
 
 - (void)showDetailViewControllerFromSourceViewController:(UIViewController *)sourceViewController
                                           withDictionary:(NSDictionary *)detailDictionary;
+- (void)unwindToListViewControllerFromSourceViewController:(UIViewController *)sourceViewController;
 
 @end

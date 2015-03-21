@@ -58,7 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="unwindButtonTapped:" destination="fGm-xg-O5R" eventType="touchUpInside" id="dRN-d7-c5r"/>
+                                    <segue destination="Xdq-T9-E2I" kind="unwind" identifier="listTableViewControllerUnwindSegue" unwindAction="prepareForUnwind:" id="NyC-lM-BRu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,7 +66,6 @@
                     </view>
                     <connections>
                         <outlet property="detailTextLabel" destination="6zN-G3-mCm" id="xvu-Fw-h9M"/>
-                        <segue destination="Xdq-T9-E2I" kind="unwind" identifier="listTableViewControllerUnwindSegue" unwindAction="prepareForUnwind:" id="k78-h6-NZn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmc-yv-Miz" userLabel="First Responder" sceneMemberID="firstResponder"/>

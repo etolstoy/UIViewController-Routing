@@ -7,10 +7,14 @@
 //
 
 #import "YDDetailViewController.h"
+#import "YDRouterBase.h"
+
+#import <UIViewController+Routing/UIViewController+Routing.h>
 
 @interface YDDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *detailTextLabel;
+@property (strong, nonatomic) YDRouterBase *router;
 
 @end
 
@@ -24,7 +28,7 @@
 }
 
 - (IBAction)unwindButtonTapped:(id)sender {
-    [self performSegueWithIdentifier:@"listTableViewControllerUnwindSegue" sender:self];
+    [self.router unwindToListViewControllerFromSourceViewController:self];
 }
 
 @end

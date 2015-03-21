@@ -32,7 +32,7 @@
 
 #pragma mark - Segues with Preparation Blocks Implementation
 
-- (void)setPreparationBlock:(YDSeguePreparationBlock)block forSegueWithIdentifier:(NSString *)identifier
+- (void)setPreparationBlock:(id)block forSegueWithIdentifier:(NSString *)identifier
 {
     if (!identifier) {
         return;
@@ -48,7 +48,7 @@
     [self setSeguesBlockDictionary:dict];
 }
 
-- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender preparationBlock:(YDSeguePreparationBlock)block {
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender preparationBlock:(id)block {
     [self setPreparationBlock:block forSegueWithIdentifier:identifier];
     [self performSegueWithIdentifier:identifier sender:sender];
 }

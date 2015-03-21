@@ -40,6 +40,7 @@ static NSString *const YDUnwindToListSegueIdentifier = @"listTableViewController
     YDSeguePreparationBlock preparationBlock =  ^void(UIStoryboardSegue *segue) {
         YDDetailViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.detailDictionary = detailDictionary;
+        destinationViewController.router = self;
     };
     
     [sourceViewController performSegueWithIdentifier:YDDetailSegueIdentifier

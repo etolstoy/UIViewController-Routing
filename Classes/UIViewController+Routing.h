@@ -16,7 +16,7 @@
  */
 typedef void (^YDSeguePreparationBlock)(UIStoryboardSegue *segue);
 
-typedef UIStoryboardSegue* (^YDUnwindSeguePreparationBlock)(UIViewController *toViewController, UIViewController *fromViewController, NSString *identifier);
+typedef UIStoryboardSegue *(^YDUnwindSeguePreparationBlock)(UIViewController *toViewController, UIViewController *fromViewController, NSString *identifier);
 
 @interface UIViewController (Routing)
 
@@ -34,7 +34,7 @@ typedef UIStoryboardSegue* (^YDUnwindSeguePreparationBlock)(UIViewController *to
  */
 - (void)performSegueWithIdentifier:(NSString *)identifier
                             sender:(id)sender
-                  preparationBlock:(YDSeguePreparationBlock)block;
+                  preparationBlock:(id)block;
 
 /**
  *  This method returns the configuration block for a specific segue
