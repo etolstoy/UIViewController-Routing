@@ -42,6 +42,7 @@ typedef void (^YDPreparationBlock)(UIStoryboardSegue *segue);
  *  @return Configuration block
  */
 - (YDPreparationBlock)preparationBlockForSegue:(UIStoryboardSegue *)segue;
+- (YDPreparationBlock)preparationBlockForSegueIdentifier:(NSString *)segueIdentifier;
 
 @end
 
@@ -57,5 +58,7 @@ typedef void (^YDPreparationBlock)(UIStoryboardSegue *segue);
  *  @param sender Sender
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
+- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier;
 
 @end

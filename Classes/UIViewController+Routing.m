@@ -59,27 +59,37 @@
     return dict[segue.identifier];
 }
 
+- (YDPreparationBlock)preparationBlockForSegueIdentifier:(NSString *)segueIdentifier {
+    NSDictionary *dict = [self seguesBlockDictionary];
+    return dict[segueIdentifier];
+}
+
 #pragma mark - Methods Swizzling
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        SEL originalSelector = @selector(prepareForSegue:sender:);
-        SEL swizzledSelector = @selector(yd_prepareForSegue:sender:);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-        
-        if (didAddMethod) {
-            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
+        [self swizzleSelector:@selector(prepareForSegue:sender:)
+                 withSelector:@selector(yd_prepareForSegue:sender:)];
+        [self swizzleSelector:@selector(segueForUnwindingToViewController:fromViewController:identifier:)
+                 withSelector:@selector(yd_segueForUnwindingToViewController:fromViewController:identifier:)];
     });
+}
+
++ (void)swizzleSelector:(SEL)originalSelector withSelector:(SEL)swizzledSelector {
+    Class class = [self class];
+    
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    
+    if (didAddMethod) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+
 }
 
 - (void)yd_prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -89,5 +99,11 @@
     [self setPreparationBlock:nil forSegueWithIdentifier:segue.identifier];
 }
 
+- (UIStoryboardSegue *)yd_segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
+    [self yd_segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
+    
+    [self setPreparationBlock:nil forSegueWithIdentifier:identifier];
+    return [self.router segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
+}
 
 @end

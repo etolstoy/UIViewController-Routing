@@ -24,6 +24,13 @@ static NSString *const YDDetailSegueIdentifier = @"detailViewControllerSegue";
     }
 }
 
+- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
+    YDPreparationBlock block = [fromViewController preparationBlockForSegueIdentifier:identifier];
+    if (block) {
+        block(nil);
+    }
+}
+
 #pragma mark - Public Methods
 
 - (void)showDetailViewControllerFromSourceViewController:(UIViewController *)sourceViewController

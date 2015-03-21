@@ -23,4 +23,8 @@
     self.detailTextLabel.text = self.detailDictionary[@"long"];
 }
 
+- (IBAction)unwindButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"listTableViewControllerUnwindSegue" sender:self];
+}
+
 @end
