@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  YDDetailViewController.h
 //  RoutingSample
 //
 //  Created by Egor Tolstoy on 3/21/15.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface YDDetailViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) NSDictionary *detailDictionary;
 
 @end
-

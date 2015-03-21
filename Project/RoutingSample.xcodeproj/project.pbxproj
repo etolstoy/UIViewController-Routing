@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9FB665891ABDABCF006FE6B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB665881ABDABCF006FE6B0 /* main.m */; };
-		9FB6658C1ABDABCF006FE6B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6658B1ABDABCF006FE6B0 /* AppDelegate.m */; };
-		9FB6658F1ABDABCF006FE6B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6658E1ABDABCF006FE6B0 /* ViewController.m */; };
+		9FB6658C1ABDABCF006FE6B0 /* YDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6658B1ABDABCF006FE6B0 /* YDAppDelegate.m */; };
+		9FB6658F1ABDABCF006FE6B0 /* YDListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6658E1ABDABCF006FE6B0 /* YDListTableViewController.m */; };
 		9FB665921ABDABCF006FE6B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB665901ABDABCF006FE6B0 /* Main.storyboard */; };
 		9FB665941ABDABCF006FE6B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB665931ABDABCF006FE6B0 /* Images.xcassets */; };
 		9FB665971ABDABCF006FE6B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB665951ABDABCF006FE6B0 /* LaunchScreen.xib */; };
 		9FB665A31ABDABCF006FE6B0 /* RoutingSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB665A21ABDABCF006FE6B0 /* RoutingSampleTests.m */; };
+		9FB665AE1ABDAEA9006FE6B0 /* YDRouterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB665AD1ABDAEA9006FE6B0 /* YDRouterBase.m */; };
+		9FB665B11ABDAF50006FE6B0 /* YDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB665B01ABDAF50006FE6B0 /* YDDetailViewController.m */; };
 		BA1B5B1CFCB8B38A7CA60E18 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB631FCC8D251A0ED659B36 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,16 +35,20 @@
 		9FB665831ABDABCF006FE6B0 /* RoutingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB665871ABDABCF006FE6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB665881ABDABCF006FE6B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9FB6658A1ABDABCF006FE6B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9FB6658B1ABDABCF006FE6B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9FB6658D1ABDABCF006FE6B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FB6658E1ABDABCF006FE6B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FB6658A1ABDABCF006FE6B0 /* YDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDAppDelegate.h; sourceTree = "<group>"; };
+		9FB6658B1ABDABCF006FE6B0 /* YDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDAppDelegate.m; sourceTree = "<group>"; };
+		9FB6658D1ABDABCF006FE6B0 /* YDListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDListTableViewController.h; sourceTree = "<group>"; };
+		9FB6658E1ABDABCF006FE6B0 /* YDListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDListTableViewController.m; sourceTree = "<group>"; };
 		9FB665911ABDABCF006FE6B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB665931ABDABCF006FE6B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FB665961ABDABCF006FE6B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9FB6659C1ABDABCF006FE6B0 /* RoutingSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoutingSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB665A11ABDABCF006FE6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB665A21ABDABCF006FE6B0 /* RoutingSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoutingSampleTests.m; sourceTree = "<group>"; };
+		9FB665AC1ABDAEA9006FE6B0 /* YDRouterBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDRouterBase.h; sourceTree = "<group>"; };
+		9FB665AD1ABDAEA9006FE6B0 /* YDRouterBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDRouterBase.m; sourceTree = "<group>"; };
+		9FB665AF1ABDAF50006FE6B0 /* YDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDDetailViewController.h; sourceTree = "<group>"; };
+		9FB665B01ABDAF50006FE6B0 /* YDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDDetailViewController.m; sourceTree = "<group>"; };
 		CA1FD44CAEF7CA7D0A272D1C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,10 +102,14 @@
 		9FB665851ABDABCF006FE6B0 /* RoutingSample */ = {
 			isa = PBXGroup;
 			children = (
-				9FB6658A1ABDABCF006FE6B0 /* AppDelegate.h */,
-				9FB6658B1ABDABCF006FE6B0 /* AppDelegate.m */,
-				9FB6658D1ABDABCF006FE6B0 /* ViewController.h */,
-				9FB6658E1ABDABCF006FE6B0 /* ViewController.m */,
+				9FB6658A1ABDABCF006FE6B0 /* YDAppDelegate.h */,
+				9FB6658B1ABDABCF006FE6B0 /* YDAppDelegate.m */,
+				9FB6658D1ABDABCF006FE6B0 /* YDListTableViewController.h */,
+				9FB6658E1ABDABCF006FE6B0 /* YDListTableViewController.m */,
+				9FB665AF1ABDAF50006FE6B0 /* YDDetailViewController.h */,
+				9FB665B01ABDAF50006FE6B0 /* YDDetailViewController.m */,
+				9FB665AC1ABDAEA9006FE6B0 /* YDRouterBase.h */,
+				9FB665AD1ABDAEA9006FE6B0 /* YDRouterBase.m */,
 				9FB665901ABDABCF006FE6B0 /* Main.storyboard */,
 				9FB665931ABDABCF006FE6B0 /* Images.xcassets */,
 				9FB665951ABDABCF006FE6B0 /* LaunchScreen.xib */,
@@ -189,6 +199,7 @@
 		9FB6657B1ABDABCF006FE6B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YD;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = etolstoy;
 				TargetAttributes = {
@@ -278,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FB6658F1ABDABCF006FE6B0 /* ViewController.m in Sources */,
-				9FB6658C1ABDABCF006FE6B0 /* AppDelegate.m in Sources */,
+				9FB6658F1ABDABCF006FE6B0 /* YDListTableViewController.m in Sources */,
+				9FB665B11ABDAF50006FE6B0 /* YDDetailViewController.m in Sources */,
+				9FB6658C1ABDABCF006FE6B0 /* YDAppDelegate.m in Sources */,
+				9FB665AE1ABDAEA9006FE6B0 /* YDRouterBase.m in Sources */,
 				9FB665891ABDABCF006FE6B0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

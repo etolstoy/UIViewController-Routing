@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 etolstoy. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "YDAppDelegate.h"
 
-@interface AppDelegate ()
+@interface YDAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation YDAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
