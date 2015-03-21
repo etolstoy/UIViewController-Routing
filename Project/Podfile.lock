@@ -1,0 +1,14 @@
+PODS:
+  - UIViewController+Routing (0.1.0)
+
+DEPENDENCIES:
+  - UIViewController+Routing (from `~/UIViewController-Routing`)
+
+EXTERNAL SOURCES:
+  UIViewController+Routing:
+    :path: ~/UIViewController-Routing
+
+SPEC CHECKSUMS:
+  UIViewController+Routing: 3973d7b155c8dc1715721d55638c9c8b1485c6cc
+
+COCOAPODS: 0.36.0
