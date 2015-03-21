@@ -10,6 +10,7 @@
 #import "YDDetailViewController.h"
 
 static NSString *const YDDetailSegueIdentifier = @"detailViewControllerSegue";
+static NSString *const YDUnwindToListSegueIdentifier = @"listTableViewControllerUnwindSegue";
 
 @implementation YDRouterBase
 
@@ -17,7 +18,7 @@ static NSString *const YDDetailSegueIdentifier = @"detailViewControllerSegue";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *sourceViewController = segue.sourceViewController;
-    YDPreparationBlock block = [sourceViewController preparationBlockForSegue:segue];
+    YDSeguePreparationBlock block = [sourceViewController preparationBlockForSegue:segue];
     
     if (block) {
         block(segue);
@@ -25,17 +26,18 @@ static NSString *const YDDetailSegueIdentifier = @"detailViewControllerSegue";
 }
 
 - (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-    YDPreparationBlock block = [fromViewController preparationBlockForSegueIdentifier:identifier];
+    YDUnwindSeguePreparationBlock block = [fromViewController preparationBlockForSegueIdentifier:identifier];
     if (block) {
-        block(nil);
+        return block(toViewController, fromViewController, identifier);
     }
+    return nil;
 }
 
 #pragma mark - Public Methods
 
 - (void)showDetailViewControllerFromSourceViewController:(UIViewController *)sourceViewController
                                           withDictionary:(NSDictionary *)detailDictionary {
-    YDPreparationBlock preparationBlock =  ^void(UIStoryboardSegue *segue) {
+    YDSeguePreparationBlock preparationBlock =  ^void(UIStoryboardSegue *segue) {
         YDDetailViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.detailDictionary = detailDictionary;
     };
@@ -43,6 +45,16 @@ static NSString *const YDDetailSegueIdentifier = @"detailViewControllerSegue";
     [sourceViewController performSegueWithIdentifier:YDDetailSegueIdentifier
                                               sender:self
                                     preparationBlock:preparationBlock];
+}
+
+- (void)unwindToListViewControllerFromSourceViewController:(UIViewController *)sourceViewController {
+    YDUnwindSeguePreparationBlock preparationBlock = ^UIStoryboardSegue* (UIViewController *toViewController, UIViewController *fromViewController, NSString *identifier) {
+        return [UIStoryboardSegue segueWithIdentifier:YDUnwindToListSegueIdentifier source:fromViewController destination:toViewController performHandler:^{
+            NSLog(@"123");
+        }];
+    };
+    
+    [sourceViewController performSegueWithIdentifier:YDUnwindToListSegueIdentifier sender:self preparationBlock:preparationBlock];
 }
 
 @end
