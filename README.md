@@ -17,14 +17,14 @@ You can install this category in two ways:
  - Copy two files, *UIViewController+Routing.h* and *UIViewController+Routing.m* to your project.
 
 ###Usage
-1. Create a new class, *Router*, which inherits from NSObject. Make this class conform to *YDRouter* protocol:
-```objc
+ 1. Create a new class, *Router*, which inherits from NSObject. Make this class conform to *YDRouter* protocol:
+    ```objc
 @interface YDRouterBase : NSObject <YDRouter>
 @end
-```
-2. Implement any number of navigation methods with the following implementation:
+    ```
+ 2. Implement any number of navigation methods with the following implementation:
 
-```objc
+    ```objc
 - (void)showDetailViewControllerFromSourceViewController:(UIViewController *)sourceViewController withDictionary:(NSDictionary *)detailDictionary {
     YDSeguePreparationBlock preparationBlock =  ^void(UIStoryboardSegue *segue) {
         YDDetailViewController *destinationViewController = segue.destinationViewController;
@@ -34,10 +34,10 @@ You can install this category in two ways:
     
     [sourceViewController performSegueWithIdentifier:YDDetailSegueIdentifier sender:self preparationBlock:preparationBlock];
 }
-```
-3. Implement the *- prepareForSegue:* method in your router:
+    ```
+ 3. Implement the *- prepareForSegue:* method in your router:
 
-```objc
+    ```objc
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *sourceViewController = segue.sourceViewController;
     YDSeguePreparationBlock block = [sourceViewController preparationBlockForSegue:segue];
@@ -46,9 +46,9 @@ You can install this category in two ways:
         block(segue);
     }
 }
-```
+    ```
 
-4. From now on, every time you called for *-performSegue:withIdentifier:* method, use the appropriate method of your router.
+ 4. From now on, every time you called for *-performSegue:withIdentifier:* method, use the appropriate method of your router.
 
 ###Example
 The project now contains a nice demo project, which shows some aspects of using this category and Routers objects. Feel free to answer your questions in the Issues.
