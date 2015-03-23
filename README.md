@@ -18,10 +18,12 @@ You can install this category in two ways:
 
 ###Usage
  1. Create a new class, *Router*, which inherits from NSObject. Make this class conform to *YDRouter* protocol:
-    ```objc
-@interface YDRouterBase : NSObject <YDRouter>
-@end
-    ```
+
+ ```objc
+ @interface YDRouterBase : NSObject <YDRouter>
+
+ @end
+ ```
  2. Implement any number of navigation methods with the following implementation:
 
     ```objc
@@ -51,7 +53,7 @@ You can install this category in two ways:
  4. From now on, every time you called for *-performSegue:withIdentifier:* method, use the appropriate method of your router.
 
 ###Example
-The project now contains a nice demo project, which shows some aspects of using this category and Routers objects. Feel free to answer your questions in the Issues.
+The project now contains a nice demo project, which shows some aspects of using this category and Routers objects. Remember to run *pod install* before building the demo app. Feel free to ask your questions in the Issues.
 
 ###Additional Info
 [Here] you can read about using this category for a simple test case (in Russian). And check this [project] for an example of usage this concept in a more realistic app.
