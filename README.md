@@ -12,7 +12,7 @@ You can install this category in two ways:
  - *Recommended:* Install the Cocoapods gem, create Podfile and add the following line:
  
    ```ruby
-   pod 'UIViewController+Routing', '~> 0.1.0'
+   pod 'UIViewController+Routing', '~> 0.1'
    ```
  - Copy two files, *UIViewController+Routing.h* and *UIViewController+Routing.m* to your project.
 
