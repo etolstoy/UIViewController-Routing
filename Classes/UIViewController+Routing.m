@@ -34,16 +34,18 @@
 
 - (void)setPreparationBlock:(YDPreparationBlock)block forSegueWithIdentifier:(NSString *)identifier
 {
-    if (identifier) {
-        NSMutableDictionary *dict = [[self seguesBlockDictionary]?:@{} mutableCopy];
-        if (block) {
-            dict[identifier] = [block copy];
-        } else {
-            [dict removeObjectForKey:identifier];
-        }
-        
-        [self setSeguesBlockDictionary:dict];
+    if (!identifier) {
+        return;
     }
+
+    NSMutableDictionary *dict = [[self seguesBlockDictionary]?:@{} mutableCopy];
+    if (block) {
+        dict[identifier] = [block copy];
+    } else {
+        [dict removeObjectForKey:identifier];
+    }
+    
+    [self setSeguesBlockDictionary:dict];
 }
 
 - (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender preparationBlock:(YDPreparationBlock)block {
