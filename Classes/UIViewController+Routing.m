@@ -34,6 +34,10 @@
 
 - (void)setPreparationBlock:(YDPreparationBlock)block forSegueWithIdentifier:(NSString *)identifier
 {
+    if (!identifier) {
+        return;
+    }
+
     NSMutableDictionary *dict = [[self seguesBlockDictionary]?:@{} mutableCopy];
     if (block) {
         dict[identifier] = [block copy];
