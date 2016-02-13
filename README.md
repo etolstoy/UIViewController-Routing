@@ -9,7 +9,7 @@ It does the following things at the moment:
 
 ###Installation
 You can install this category in two ways:
- - *Recommended:* Install the Cocoapods gem, create Podfile and add the following line:
+ - *Recommended:* Install the CocoaPods gem, create Podfile and add the following line:
  
    ```ruby
    pod 'UIViewController+Routing', '~> 0.1'
